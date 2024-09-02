@@ -1,4 +1,4 @@
-module github.com/caddy-dns/ovh
+module github.com/jability/caddy-ovh
 
 go 1.22.6
 
