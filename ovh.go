@@ -1,7 +1,7 @@
 package ovh
 
 import (
-	"github.com/libdns/ovh"
+	"github.com/jability/ovh"
 
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
@@ -37,13 +37,12 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 
 // UnmarshalCaddyfile sets up the DNS provider from Caddyfile tokens. Syntax:
 //
-// ovh {
-//     endpoint <string>
-//     application_key <string>
-//     application_secret <string>
-//     consumer_key <string>
-// }
-//
+//	ovh {
+//	    endpoint <string>
+//	    application_key <string>
+//	    application_secret <string>
+//	    consumer_key <string>
+//	}
 func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 	for d.Next() {
 		if d.NextArg() {
@@ -93,3 +92,4 @@ var (
 	_ caddyfile.Unmarshaler = (*Provider)(nil)
 	_ caddy.Provisioner     = (*Provider)(nil)
 )
+
